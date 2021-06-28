@@ -24,3 +24,6 @@ As principais tecnologias utilizadas no desenvolvimento são
 - Thymeleaf
 - MySQL
 
+Um levantamento inicial de requisitos originou o seguinte diagrama de classes:
+
+![Diagrama de Classes](./src/main/resources/static/img/210628-diagrama_classes.png)
