@@ -38,4 +38,4 @@ A segunda parte cuidará da licitação e da formalização do contrato
 
 O Diagrama de Entidades e Relacionamentos:
 
-![DER](./src/main/resources/static/img/210628-sgcp-diagrama_entidades_relacionamentos_300dpi.png)
+![DER](./src/main/resources/static/img/210628-sgcp-diagrama_entidades_relacionamentos-v2_300dpi.png)
