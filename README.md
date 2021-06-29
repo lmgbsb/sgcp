@@ -39,3 +39,10 @@ A segunda parte cuidará da licitação e da formalização do contrato
 O Diagrama de Entidades e Relacionamentos:
 
 ![DER](./src/main/resources/static/img/210628-sgcp-diagrama_entidades_relacionamentos-v2_300dpi.png)
+
+A execução do contrato deverá ser acompanhada e fiscalizada por 1 (um) ou mais fiscais do contrato, representantes da Administração especialmente designados conforme requisitos estabelecidos no art. 7º desta Lei, ou pelos respectivos substitutos, cf. Art. 117. da Lei 8.112.
+
+Preposto é o representante do contratado na execução do contrato, cf. Art. 118 da Lei 8.112.
+
+O objeto do contrato será recebido definitivamente, por servidor ou comissão designada pela autoridade competente, mediante termo detalhado que comprove o atendimento das exigências contratuais, cf. Art. 140 da Lei 8.112.
+
