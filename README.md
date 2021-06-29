@@ -45,8 +45,6 @@ Um levantamento inicial de requisitos originou o seguinte diagrama de classes:
 
 A primeira parte cuidará da execução e ficalização do contrato
 
-![Diagrama de Classes](./src/main/resources/static/img/210628-sgcp-diagrama_classes-fiscalizacao.jpg)
-
 A segunda parte cuidará da licitação e da formalização do contrato
 
 O Diagrama de Entidades e Relacionamentos:
