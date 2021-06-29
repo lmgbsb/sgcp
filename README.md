@@ -39,7 +39,7 @@ As principais tecnologias utilizadas no desenvolvimento são
 
 Um levantamento inicial de requisitos originou o seguinte diagrama de classes:
 
-![Diagrama de Classes](./src/main/resources/static/img/210628-diagrama_classes.png)
+![Diagrama de Classes](./src/main/resources/static/img/sgcp-diagrama_de_classes.png)
 
 :warning: Tendo em vista o tamanho e a complexidade do projeto, bem como a possibilidade de dividi-lo em partes íntegras que tenham valor por si só, optou-se então pela divisão em dois projetos que posteriormente serão integrados. 
 
