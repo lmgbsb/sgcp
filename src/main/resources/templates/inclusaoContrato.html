@@ -2,15 +2,17 @@
 <html>
 	
 <head>
-	<link rel="stylesheet" type="text/css" href="../static/css/estilo.css" >
-	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../static/css/estilo.css">	
+	<meta charset="UTF-8">	
+	
+	<script src="../static/js/myscripts.js"></script> 
+	<script>
+		window.onload = function() {
+		  var input = document.getElementById("numeroContrato").focus();
+		}
+	</script>
 </head>
 
-<script>
-	window.onload = function() {
-	  var input = document.getElementById("contrato").focus();
-	}
-</script>
 <body bottomMargin="0" bgColor=#ffffff leftMargin="0" topMargin="0" rightMargin="0" marginwidth="0" marginheight="0">
 	
 		<table cellpadding="0" cellspacing="0" border="0">
@@ -55,7 +57,7 @@
 							        		Número/Ano: 
 							        	</td>
 							        	<td>
-							        		<input type=text class="numeroContrato" id="contrato">/<input type="text" class="ano">
+							        		<input type=text class="numeroContrato" id="numeroContrato" onkeyup="SaltaCampo(document.all.numeroContrato, document.all.anoContrato, 3, event)">/<input type="text" class="ano" id="anoContrato" onkeyup="SaltaCampo(document.all.anoContrato, document.all.objetoContrato, 4, event)">
 							        	</td>
 									</tr>	
 									<tr>
@@ -63,7 +65,7 @@
 							        		Objeto: 
 							        	</td>
 							        	<td>
-							        		<textarea rows="8" cols="89"></textarea>
+							        		<textarea id="objetoContrato" rows="8" cols="89"></textarea>
 							        	</td>
 									</tr>	
 									<tr>
@@ -156,7 +158,7 @@
 							<td colspan = "2">
 							<fieldset style="width:100%"><legend>Fiscal</legend>						
 						        <table width = "100%" border = "0">
-									<form method = "post" action = "#">
+									<form id="servidor" method = "post" action = "#">
 									<tr>
 							        	<td>
 							        		<table cellpadding="0" cellspacing="0">
@@ -211,7 +213,7 @@
 							<td colspan = "2">
 							<fieldset style="width:100%"><legend>Preposto</legend>						
 						        <table width = "100%" border = "0">
-									<form method = "post" action = "#">
+									<form id="preposto" method = "post" action = "#">
 									<tr>
 							        	<td>
 							        		<table cellpadding="0" cellspacing="0">
@@ -220,7 +222,10 @@
 														CPF:											
 													</td>	
 													<td>
-														&nbsp;<input type="text" class = 'cpf3'>.<input type="text" class = 'cpf3'>.<input type="text" class = 'cpf3'>-<input type="text" class = 'cpf2'>
+														&nbsp;<input type="text" class = 'cpf3' id="cpf1">.
+														<input type="text" class = 'cpf3' id="cpf2">.
+														<input type="text" class = 'cpf3' id="cpf3">-
+														<input type="text" class = 'cpf2' id="cpf4">
 														<input type ="submit" value="Pesquisar" class="submit">
 													</td>			
 												</tr>
