@@ -1,0 +1,176 @@
+
+body {
+  	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin: 0px;
+	margin-left: 5px;
+	padding: 0px;
+	background-color: #FFFFFF;
+	
+}
+
+.cabecalho {	
+	background-color: grey;
+	text-align: center;
+	border:1px solid white; 
+	height:150;
+	width: 1200;
+	font-size:50px;
+	font-family:Calibri;
+	font:bold;
+}
+
+
+/* estilos de formulario */
+input { 
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+    color: #000000; 
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAAA;
+	font-size: 14px; 
+}
+
+input.submit {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+    color: #000000; 
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAAA;
+	font-size: 14px; 
+	cursor: pointer;
+}
+
+select { 
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+    color: #000000; 
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAAA;
+	font-size: 14px; 
+}
+
+textarea { 
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+    color: #000000; 
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAAA;
+	font-size: 14px; 
+}
+
+/* grupo1, 2, 3 e 4  são referentes
+   aos ids dos divs do menu lateral.
+   A página inicialmente carrega 
+   com esses itens escondidos.
+  */
+  
+#grupo1 {
+	DISPLAY: none;
+}
+
+#grupo2 {
+	DISPLAY: none;
+}
+
+#grupo3 {
+	DISPLAY: none;
+}
+
+#grupo4 {
+	DISPLAY: none;
+}
+
+.menu {	
+	background-color: #abb2b9;
+	border:1px solid white; 
+	width:150;
+	height:20px;
+	font-size:14px;
+	font-family:Calibri;
+	font:bold;
+	cursor: pointer;
+}
+
+.tituloMenu{
+	color: black;
+	font-family:calibri, arial;
+}
+
+.item {
+	background-color: #4a4e52;
+	color:#FFFFFF;
+	width:147;
+	height: 23px;
+	font-size:12px;
+	font-family:calibri, arial;
+	text-decoration:none;
+	cursor:pointer;
+} 
+
+.menuSubItem {
+	width:147;
+	border:1px solid white; 
+    border-top-width: 0px;
+    border-left: solid white 1px;
+	border-right: solid white 1px;  
+	border-bottom: solid white 1px;
+	padding: 4px 4px 4px 4px;
+}
+
+.titulo {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.linkVoltar{
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size:12px;
+	cursor: hand;
+}
+
+table.tabelaInterna {
+	padding: 5px;
+	width: 595px;	
+}
+
+.numeroContrato{
+	width: 30px;
+	text-align:right;
+}
+
+.valorContrato{
+	width: 89px;
+	text-align:right;
+}
+
+.processoSEI{
+	width: 89px;
+	text-align:right;
+}
+
+.diaMes{
+	width: 22px;
+}
+.ano{
+	width: 38px;
+	text-align:right;
+}
+
+.matricula{
+	width: 46px;
+	text-align:right;
+}
+
+.legenda{
+	text-align:right;
+	width: 120px;
+}
+
+.cpf3{
+	width:30;
+	text-align:right;
+}
+
+.cpf2{
+	width:22;
+	text-align:right;
+}

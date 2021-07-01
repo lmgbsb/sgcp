@@ -1,0 +1,256 @@
+<html> 
+	<META http-equiv=content-type content="text/html; charset=iso-8859-1">
+	<META http-equiv=Cache-Control content=no-cache>
+	<link href="../static/css/estilo.css" rel="stylesheet" type="text/css">
+ 
+<style type="text/css">
+<!--
+
+body{
+margin-left: 0px;
+}
+
+a:link{text-decoration: none;color:#FFFFFF;}
+a:hover{text-decoration: none;}
+a:visited{text-decoration: none;color:#FFFFFF;}
+a:active{text-decoration: none}
+-->
+</style>
+
+
+<SCRIPT language=javascript>
+
+	function showtab(tabID) {
+	camada = document.all[tabID];
+		if(camada.style.display=='block'){
+		camada.style.display='none';		
+		}	
+		else{
+		camada.style.display='block';
+		}	
+	}
+	
+	function hidetab(tabID) {
+	camada = document.all[tabID];
+	camada.style.display='none';
+	}
+
+</SCRIPT>
+
+<body>
+<table>
+	<tr>
+		<td colspan=2 class="cabecalho">
+			Sistema de Gestão de Compras Públicas
+		</td>
+	</tr>
+	<tr>
+		<td>
+						
+			<table width="155" cellpadding="0" cellspacing="0" height= "700" border=1>           
+				<tr>
+					<td bgcolor=" #f4f6f6" valign="top"> 
+				    	<table width="150" cellspacing="0" cellpadding="0" border="0" style="margin-top: 8px; padding: 0px 0px 0px 0px;">
+				        	<tr align="right"> 
+				            	<td>				   
+				            	<!-- início do menu lateral -->
+									<table width="147" align="right" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td class="menu" onclick="showtab('grupo1');hidetab('grupo2');hidetab('grupo3');hidetab('grupo4')">
+												&nbsp; 
+												<span class = "tituloMenu">
+													Inclusão
+												</span>
+			 								</td>
+				   						</tr>
+									</table>
+								</td>
+							 </tr>
+							 <tr align="left"> 
+							    <td>										
+									<DIV id=grupo1>
+									<table align="right" cellspacing="0" class="menuSubItem">
+									   <TBODY> 
+										<tr>
+				   							<td>
+					   							<table cellspacing="0">
+								   						 
+								   						<tr>
+															<td class="item">
+																<a href = "#">Contrato</a>
+							 								</td>
+								   						</tr>	 
+								   						<tr>
+															<td class="item">
+																<a href = "#">Fiscal</a>
+							 								</td>
+								   						</tr>
+								   						<tr>
+															<td class="item">
+																<a href = "#">Preposto</a>
+							 								</td>
+								   						</tr>	
+								   						<tr>
+															<td class="item">
+																<a href = "#">Vigência</a>
+							 								</td>
+								   						</tr>  
+								   						<tr>
+															<td class="item">
+																<a href = "#">Pagamento</a>
+							 								</td>
+								   						</tr>   						
+							   					</table>
+					   						</td>
+					   					</tr>
+										</TBODY>
+									  </table>
+									  </DIV>
+									</td>
+							   </tr>
+							   <tr height="7"><td height="7" width="100%" background="imagens/separador.gif"></td></tr>
+							   <tr align="right"> 
+							    <td>		
+					  			    <table width="147" align="right" border="0" cellspacing="0" cellpadding="0">
+				   					  <tr>
+											<td class= "menu" onclick="showtab('grupo2');hidetab('grupo1');hidetab('grupo3');hidetab('grupo4')">
+											&nbsp; 
+											<span class = "tituloMenu">
+												Pesquisa
+											</span>								
+											</td>
+				   					  </tr>	
+									  </table>			
+						     	</td>
+							 </tr>
+							 <tr align="left"> 
+							    <td>		  
+									  <DIV id=grupo2>
+									<table align="right" cellspacing="0" class="menuSubItem">
+									   <TBODY> 
+										<tr>
+				   							<td>
+					   							<table cellspacing="0">					   						 
+								   						<tr>
+															<td class="item">
+																<a href = "#">Contrato</a>
+							 								</td>
+								   						</tr> 
+								   						<tr>
+															<td class="item">
+																<a href = "#">Pagamento</a>
+							 								</td>
+								   						</tr>	 
+							   					</table>
+					   						</td>
+					   					</tr>
+										</TBODY>
+										</table>
+									  </DIV>
+								</td>
+							 </tr>
+								 <tr height="7"><td height="7" width="100%"></td></tr>
+								 <tr align="right"> 
+								    <td>		
+										<table width="147" align="right" border="0" cellspacing="0" cellpadding="0">
+					   					  <tr>
+												<td class="menu" onclick="showtab('grupo3');hidetab('grupo1');hidetab('grupo2');hidetab('grupo4')">
+												 &nbsp; 
+												 <span class = "tituloMenu">
+													Relatórios
+												</span>										
+												</td>
+					   					  </tr>	
+										  </table>
+								    </td>
+								 </tr>
+								 <tr align="left"> 
+								    <td>				  
+									  <DIV id=grupo3>
+										<table align="right" cellspacing="0" class="menuSubItem">
+										   <TBODY> 
+					   						<tr>
+					   							<td>
+						   							<table cellspacing="0">
+									   						<tr>
+																<td class="item">
+																	<a href = "#">Contratos por Empresa</a>
+								 								</td>
+									   						</tr>	 
+									   						
+									   						<tr>
+																<td class="item">
+																	<a href = "#">Contratos por fiscal</a>
+								 								</td>
+									   						</tr>
+									   						<tr>
+																<td class="item">
+																	<a href = "#">Próximos ao vencimento</a>
+								 								</td>
+									   						</tr>						   						
+									   						<tr>
+																<td class="item">
+																	<a href = "#">Restos a pagar</a>
+								 								</td>
+									   						</tr>
+								   					</table>
+						   						</td>
+						   					</tr>
+										   </TBODY>
+										   </table>
+										   </DIV>
+								  </td>
+								 </tr>
+							 <tr height="7"><td height="7" width="100%" ></td></tr>
+							 <tr align="right"> 
+							    <td>		
+									<table width="147" align="right" border="0" cellspacing="0" cellpadding="0">
+				   						<tr>
+											<td class="menu" onclick="showtab('grupo4');hidetab('grupo1');hidetab('grupo2');hidetab('grupo3')">
+											 &nbsp; 
+											 <span class = "tituloMenu">
+												API REST
+											</span>	
+											</td>
+				   						</tr>	
+									   </table>			
+							   </td>
+							 </tr>
+							 <tr align="left"> 
+							    <td>								
+								   <DIV id=grupo4>
+									<table align="right" cellspacing="0" class="menuSubItem">
+									   <TBODY> 
+				   						<tr>
+				   							<td>
+					   							<table cellspacing="0">					   						
+					   								<tr>
+														<td class="item">
+														    <a href="#">Listar Pessoas</a>
+						 								</td>
+							   						</tr> 
+							   					</table>
+					   						</td>
+					   					</tr>	
+										</TBODY>
+									   </table>	
+									  </div>			
+									</td>
+							      </tr>
+									</table>
+									<!-- fim do menu lateral -->
+				  				</td>
+				   			</tr>	   			
+				   		</table>     
+				   	</td>
+				</tr>
+			</table>
+						
+		</td>
+		<td>
+			<!-- corpo -->
+		</td>
+	</tr>
+</body>
+</html>
+

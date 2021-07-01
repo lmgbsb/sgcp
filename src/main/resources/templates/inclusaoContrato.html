@@ -1,0 +1,269 @@
+<! DOCTYPE html>
+<html>
+	
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/css/estilo.css" >
+	<meta charset="UTF-8">
+</head>
+
+<script>
+	window.onload = function() {
+	  var input = document.getElementById("contrato").focus();
+	}
+</script>
+<body bottomMargin="0" bgColor=#ffffff leftMargin="0" topMargin="0" rightMargin="0" marginwidth="0" marginheight="0">
+	
+		<table cellpadding="0" cellspacing="0" border="0">
+			
+			<tr>
+				<td align = "center">
+					<TABLE class = "tabelaInterna">
+						<TR>
+						    <TD ALIGN = CENTER class = "titulo">
+						        Inclusão de Contrato
+						    </TD>
+						</TR>
+					</TABLE>
+				</td>
+			</tr>
+			<!-- Mensagens -->
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<!-- Corpo -->
+			<tr>
+				<td>
+					<a href="javascript:history.back()" class = "linkVoltar">&lt;&nbsp;Voltar</a>
+					<br><br>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td>
+					<table border="0" width = "100%">						
+						<tr>
+							<td colspan = "2">
+							<fieldset style="width:100%"><legend>Contrato</legend>		
+							
+											
+						        <table width = "100%" border = "0">
+									<tr>
+							        	<td class="legenda">
+							        		Número/Ano: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="numeroContrato" id="contrato">/<input type="text" class="ano">
+							        	</td>
+									</tr>	
+									<tr>
+							        	<td class="legenda">
+							        		Objeto: 
+							        	</td>
+							        	<td>
+							        		<textarea rows="8" cols="89"></textarea>
+							        	</td>
+									</tr>	
+									<tr>
+							        	<td class="legenda">
+							        		Data Assinatura: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="diaMes">/<input type=text class="diaMes">/<input type="text" class="ano">
+							        	</td>
+									</tr>	
+									<tr>
+							        	<td class="legenda">
+							        		Valor: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="valorContrato">
+							        	</td>
+									</tr>	
+									<tr>
+							        	<td class="legenda">
+							        		Processo SEI: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="processoSEI">
+							        	</td>
+									</tr>	
+
+									
+								</table>						
+							</fieldset>	
+							</td>
+						</tr>
+						<tr>
+							<td colspan = 2>
+							
+							</td>
+						</tr>
+					</table>	                
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td>
+					<table border="0" width = "100%">		
+					
+									
+						<tr>
+							<td colspan = "2">
+							<fieldset style="width:100%"><legend>Vigência</legend>						
+						        <table width = "100%" border = "0">						        
+						        	<tr>
+							        	<td class="legenda">
+							        		Início: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="diaMes">/<input type=text class="diaMes">/<input type="text" class="ano">
+							        	</td>
+									</tr>	
+									<tr>
+							        	<td class="legenda">
+							        		Fim: 
+							        	</td>
+							        	<td>
+							        		<input type=text class="diaMes">/<input type=text class="diaMes">/<input type="text" class="ano">
+							        	</td>
+									</tr>	
+						        </table>
+													
+							</fieldset>	
+							</td>
+						</tr>
+						
+						
+						<tr>
+							<td colspan = 2>
+							
+							</td>
+						</tr>
+					</table>	                
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<table border="0" width = "100%">		
+					
+									
+						<tr>
+							<td colspan = "2">
+							<fieldset style="width:100%"><legend>Fiscal</legend>						
+						        <table width = "100%" border = "0">
+									<form method = "post" action = "#">
+									<tr>
+							        	<td>
+							        		<table cellpadding="0" cellspacing="0">
+							        			<tr>
+													<td class="legenda">
+														Matrícula:											
+													</td>	
+													<td>
+														&nbsp;<input type="text" class = 'matricula'>
+														<input type ="submit" value="Pesquisar" class="submit">
+													</td>			
+												</tr>
+							        		</table>
+							        	</td>
+									</tr>	
+									</form>
+									<tr>
+							        	<td>
+							        		<table cellpadding="0" cellspacing="0">
+							        			<tr>
+									             	<td class="legenda">
+														Nome:							             	                	                       
+													</td>			
+													<td>
+														&nbsp;															
+													</td>													
+												</tr>
+							        		</table>
+							        	</td>
+									</tr>
+								</table>						
+							</fieldset>	
+							</td>
+						</tr>
+						
+						
+						<tr>
+							<td colspan = 2>
+							
+							</td>
+						</tr>
+					</table>	                
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<table border="0" width = "100%">		
+					
+									
+						<tr>
+							<td colspan = "2">
+							<fieldset style="width:100%"><legend>Preposto</legend>						
+						        <table width = "100%" border = "0">
+									<form method = "post" action = "#">
+									<tr>
+							        	<td>
+							        		<table cellpadding="0" cellspacing="0">
+							        			<tr>
+													<td class="legenda">
+														CPF:											
+													</td>	
+													<td>
+														&nbsp;<input type="text" class = 'cpf3'>.<input type="text" class = 'cpf3'>.<input type="text" class = 'cpf3'>-<input type="text" class = 'cpf2'>
+														<input type ="submit" value="Pesquisar" class="submit">
+													</td>			
+												</tr>
+							        		</table>
+							        	</td>
+									</tr>	
+									</form>
+									<tr>
+							        	<td>
+							        		<table cellpadding="0" cellspacing="0">
+							        			<tr>
+									             	<td class="legenda">
+														Nome:							             	                	                       
+													</td>			
+													<td>
+														&nbsp;															
+													</td>													
+												</tr>
+							        		</table>
+							        	</td>
+									</tr>
+								</table>						
+							</fieldset>	
+							</td>
+						</tr>
+						
+						
+						<tr>
+							<td colspan = 2>
+							
+							</td>
+						</tr>
+					</table>	                
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="center">
+					<br>
+					<input type = submit value = "Incluir">
+					<br><br>
+				</td>
+			</tr>
+		</table>	
+</body>
+</html>
