@@ -23,4 +23,5 @@ public class PessoaRestController {
 		return ps.listarPessoas();
 		
 	}
+	
 }

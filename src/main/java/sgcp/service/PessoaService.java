@@ -19,4 +19,8 @@ public class PessoaService {
 	public List<Pessoa> listarPessoas(){
 		return pr.findAll();
 	}
+	
+	public void IncluirPessoa(Pessoa p) {
+		pr.save(p);
+	}
 }
