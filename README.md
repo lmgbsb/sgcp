@@ -47,7 +47,7 @@ A primeira parte cuidará da execução e ficalização do contrato
 
 A segunda parte cuidará da licitação e da formalização do contrato
 
-O Diagrama de Entidades e Relacionamentos:
+O Diagrama de Entidades e Relacionamentos da primeira fase:
 
 ![DER](./src/main/resources/static/img/210630-sgcp-diagrama_entidades_relacionamentos.png)
 
