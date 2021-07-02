@@ -31,6 +31,7 @@ As principais informações a serem disponibilizadas são:
 
 As principais tecnologias utilizadas no desenvolvimento são
 
+- JavaScript
 - Maven
 - Java
 - Spring Boot
