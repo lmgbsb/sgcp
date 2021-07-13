@@ -12,7 +12,7 @@ Nota-se que, tanto na disposição constitucional, quanto no artigo 3º da Lei n
 
 :heavy_check_mark: O público alvo desse sistema são os servidores do próprio órgão publico e a população em geral. Os servidores terão à sua disposição uma ferramenta para auxiliá-los na fiscalização das contratações, enquanto que a sociedade poderá acompanhar em um único portal todas as contratações por meio dos seus editais, valores, contratos e pagamentos.
 
-As principais informações a serem disponibilizadas são:
+As principais informações a serem disponibilizadas por meio de relatórios e API's são:
 
 * Relação de editais abertos por intervalo de tempo
 * Busca de contratos por objeto, número, intervalo de datas ou intervalo de valor
