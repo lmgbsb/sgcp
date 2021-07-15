@@ -59,4 +59,6 @@ O Diagrama de Entidades e Relacionamentos da primeira fase:
 Os endpoints para listar, incluir, excluir, alterar e detalhar contratos podem ser
 conferidos e testados pelo [Swagger](http://localhost:8080/swagger-ui.html#/contrato-rest-controller)
 
+![Swagger](./src/main/resources/static/img/sgcp_swagger.png)
+
 

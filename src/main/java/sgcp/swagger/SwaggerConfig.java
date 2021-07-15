@@ -42,12 +42,12 @@ public class SwaggerConfig {
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API-REST")
-                .description("Sistema de cGestão de Compras Públicas")
+                .title("SGCP")
+                .description("Sistema de Gestão de Compras Públicas")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("Leandro", "github.com/lmgbsb", "lmg.bsb@gmail.com"))
+                .contact(new Contact("Leandro", "github.com/lmgbsb/sgcp", "lmg.bsb@gmail.com"))
                 .build();
     }
 }
