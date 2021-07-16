@@ -1,4 +1,4 @@
-package sgcp.controller;
+package sgcp.restController;
 
 import java.util.List;
 

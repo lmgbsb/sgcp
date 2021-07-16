@@ -1,10 +1,12 @@
 package sgcp.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -29,5 +31,8 @@ public class Contrato {
 	private float valor;
 	
 	private String processoContratacao;
+	
+	@OneToMany(mappedBy="ck")
+	private List<Vigencia> vigencias;
 	
 }
