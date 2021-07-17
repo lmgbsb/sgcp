@@ -22,4 +22,8 @@ public class VigenciaService {
 		return vr.findAll();
 	}
 
+	public Vigencia incluirVigencia(Vigencia vigencia) {
+		return vr.save(vigencia);
+	}
+
 }
