@@ -1,16 +1,16 @@
 /*==============================================================*/
-/* DBMS name:      MySQL                                        */
-/* Created on:     30/06/2021 15:00:41                          */
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:                                                  */
 /*==============================================================*/
 
 
 drop table if exists contrato;
 
+drop table if exists dados_pessoais;
+
 drop table if exists fiscalizacao;
 
 drop table if exists pagamento;
-
-drop table if exists pessoa;
 
 drop table if exists preposto;
 
@@ -31,10 +31,22 @@ create table contrato
    ano_contrato         int not null,
    objeto               text not null,
    data_assinatura      date not null,
-   valor                float(53) not null,
+   valor                double not null,
    processo_contratacao varchar(15) not null,
    inteiro_teor         blob,
    primary key (numero_contrato, ano_contrato)
+);
+
+/*==============================================================*/
+/* Table: dados_pessoais                                        */
+/*==============================================================*/
+create table dados_pessoais
+(
+   cpf                  varchar(11) not null,
+   nome                 varchar(255),
+   data_nascimento      date,
+   email                varchar(255),
+   primary key (cpf)
 );
 
 /*==============================================================*/
@@ -58,30 +70,18 @@ create table fiscalizacao
 /*==============================================================*/
 create table pagamento
 (
-   id_pagamento         int not null,
+   id_pagamento         int not null auto_increment,
    matricula            varchar(6) not null,
    numero_contrato      int not null,
    ano_contrato         int not null,
-   valor_pagamento      float(53),
+   valor_pagamento      double not null,
    nota_fiscal          blob,
    data_recebimento_definitivo date,
    termo_recebimento_definitivo blob,
    processo_pagamento   varchar(15),
-   data_pagamento       date,
+   data_pagamento       date not null,
    ordem_bancaria       blob,
    primary key (id_pagamento)
-);
-
-/*==============================================================*/
-/* Table: pessoa                                                */
-/*==============================================================*/
-create table pessoa
-(
-   cpf                  varchar(11) not null,
-   nome                 varchar(255),
-   data_nascimento      date,
-   email                varchar(255),
-   primary key (cpf)
 );
 
 /*==============================================================*/
@@ -110,7 +110,7 @@ create table servidor
 /*==============================================================*/
 create table telefone
 (
-   id_telefone          int not null,
+   id_telefone          int not null auto_increment,
    cpf                  varchar(11) not null,
    ddi                  varchar(3),
    ddd                  varchar(3),
@@ -133,42 +133,42 @@ create table tipo_fiscal
 /*==============================================================*/
 create table vigencia
 (
-   id_vigencia          int not null,
+   id_vigencia          int not null auto_increment,
    numero_contrato      int not null,
    ano_contrato         int not null,
    data_inicio          date not null,
-   data_fim             date not null,
+   data_fim             date,
    portaria             blob,
    primary key (id_vigencia)
 );
 
-alter table fiscalizacao add constraint FK_reference_12 foreign key (numero_contrato, ano_contrato)
+alter table fiscalizacao add constraint fk_reference_12 foreign key (numero_contrato, ano_contrato)
       references contrato (numero_contrato, ano_contrato) on delete restrict on update restrict;
 
-alter table fiscalizacao add constraint FK_reference_14 foreign key (id_tipo_fiscal)
+alter table fiscalizacao add constraint fk_reference_14 foreign key (id_tipo_fiscal)
       references tipo_fiscal (id_tipo_fiscal) on delete restrict on update restrict;
 
-alter table fiscalizacao add constraint FK_reference_3 foreign key (matricula)
+alter table fiscalizacao add constraint fk_reference_3 foreign key (matricula)
       references servidor (matricula) on delete restrict on update restrict;
 
-alter table pagamento add constraint FK_reference_10 foreign key (matricula)
+alter table pagamento add constraint fk_reference_10 foreign key (matricula)
       references servidor (matricula) on delete restrict on update restrict;
 
-alter table pagamento add constraint FK_reference_11 foreign key (numero_contrato, ano_contrato)
+alter table pagamento add constraint fk_reference_11 foreign key (numero_contrato, ano_contrato)
       references contrato (numero_contrato, ano_contrato) on delete restrict on update restrict;
 
-alter table preposto add constraint FK_reference_6 foreign key (cpf)
-      references pessoa (cpf) on delete restrict on update restrict;
+alter table preposto add constraint fk_reference_6 foreign key (cpf)
+      references dados_pessoais (cpf) on delete restrict on update restrict;
 
-alter table preposto add constraint FK_reference_7 foreign key (numero_contrato, ano_contrato)
+alter table preposto add constraint fk_reference_7 foreign key (numero_contrato, ano_contrato)
       references contrato (numero_contrato, ano_contrato) on delete restrict on update restrict;
 
-alter table servidor add constraint FK_reference_9 foreign key (cpf)
-      references pessoa (cpf) on delete restrict on update restrict;
+alter table servidor add constraint fk_reference_9 foreign key (cpf)
+      references dados_pessoais (cpf) on delete restrict on update restrict;
 
-alter table telefone add constraint FK_reference_8 foreign key (cpf)
-      references pessoa (cpf) on delete restrict on update restrict;
+alter table telefone add constraint fk_reference_8 foreign key (cpf)
+      references dados_pessoais (cpf) on delete restrict on update restrict;
 
-alter table vigencia add constraint FK_reference_13 foreign key (numero_contrato, ano_contrato)
+alter table vigencia add constraint fk_reference_13 foreign key (numero_contrato, ano_contrato)
       references contrato (numero_contrato, ano_contrato) on delete restrict on update restrict;
 
