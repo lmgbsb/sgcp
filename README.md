@@ -40,6 +40,17 @@ As principais tecnologias utilizadas no desenvolvimento são
 - Thymeleaf
 - MySQL
 
+
+O desenvolvimento do sistema será orientado pelas diretrizes do [twelve-factor app] (https://12factor.net/),
+uma  metodologia para construir softwares-como-serviço que:
+
+- Usam formatos declarativos para automatizar a configuração inicial, minimizar tempo e custo para novos desenvolvedores participarem do projeto;
+- Tem um contrato claro com o sistema operacional que o suporta, oferecendo portabilidade máxima entre ambientes que o executem;
+- São adequados para implantação em modernas plataformas em nuvem, evitando a necessidade por servidores e administração do sistema;
+- Minimizam a divergência entre desenvolvimento e produção, permitindo a implantação contínua para máxima agilidade;
+- E podem escalar sem significativas mudanças em ferramentas, arquiteturas, ou práticas de desenvolvimento.
+
+
 <!---
 Um levantamento inicial de requisitos originou o seguinte diagrama de classes:
 
