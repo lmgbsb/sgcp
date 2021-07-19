@@ -6,7 +6,7 @@ A exigência de licitação nas contratações públicas é feita pela Carta Mag
 
 Nota-se que, tanto na disposição constitucional, quanto no artigo 3º da Lei nº 8.666/93, há a preocupação em conferir publicidade às contratações públicas, de modo que se possa controlar os atos administrativos. Importante destacar a necessidade de publicidade e transparência dos atos da administração pública, até mesmo como pressuposto para lhes conferir legitimidade, bem como manter a moralidade administrativa em relação a essas contratações. 
 
-:heavy_check_mark: Esse projeto surgiu a partir da dificuldade de obtenção de informações simples sobre as contratações de qualquer órgão público. Esses dados são públicos, porém disponibilizados de forma não estruturada no Diário Oficial da União - DOU.
+:heavy_check_mark: Esse projeto pessoal surgiu a partir da dificuldade de obtenção de informações simples sobre as contratações de qualquer órgão público. Esses dados são públicos, porém disponibilizados de forma não estruturada no Diário Oficial da União - DOU.
 
 :heavy_check_mark: O objetivo desse projeto é permitir a fiscalização pela sociedade das contratações públicas, desde a licitação até os pagamentos dos contratos por meio da disponibilização de dados para a geração de informações e conhecimento a respeito das licitações e contratações de determinado órgão público.
 

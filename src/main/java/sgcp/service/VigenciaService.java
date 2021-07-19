@@ -26,4 +26,16 @@ public class VigenciaService {
 		return vr.save(vigencia);
 	}
 
+	public Vigencia alterarVigencia(Vigencia vigencia) {
+		
+		return vr.save(vigencia);
+		
+	}
+
+	public void excluirVigencia(Integer idVigencia) {
+		
+		vr.deleteById(idVigencia);
+		
+	}
+
 }
