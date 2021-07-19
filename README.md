@@ -41,7 +41,7 @@ As principais tecnologias utilizadas no desenvolvimento são
 - MySQL
 
 
-O desenvolvimento do sistema será orientado pelas diretrizes do [twelve-factor app] (https://12factor.net/),
+O desenvolvimento do sistema será orientado pelas diretrizes do [twelve-factor app](https://12factor.net/),
 uma  metodologia para construir softwares-como-serviço que:
 
 - Usam formatos declarativos para automatizar a configuração inicial, minimizar tempo e custo para novos desenvolvedores participarem do projeto;
