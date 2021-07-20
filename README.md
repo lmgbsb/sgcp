@@ -41,8 +41,7 @@ As principais tecnologias utilizadas no desenvolvimento são
 - MySQL
 
 
-O desenvolvimento do sistema será orientado pelas diretrizes do [twelve-factor app](https://12factor.net/),
-uma  metodologia para construir softwares-como-serviço que:
+O desenvolvimento do projeto será orientado pelas diretrizes do [twelve-factor app](https://12factor.net/), uma  metodologia para construir softwares-como-serviço que:
 
 - Usam formatos declarativos para automatizar a configuração inicial, minimizar tempo e custo para novos desenvolvedores participarem do projeto;
 - Tem um contrato claro com o sistema operacional que o suporta, oferecendo portabilidade máxima entre ambientes que o executem;
@@ -72,4 +71,11 @@ conferidos e testados pelo [Swagger](http://localhost:8080/swagger-ui.html#/cont
 
 ![Swagger](./src/main/resources/static/img/sgcp_swagger.png)
 
+Os microserviços desse projeto utilizarão o formato JSON como formato de serialilzação de todos os dados de entrada e saída dos serviços e seguirão o modelo de maturidade [Richardson Maturity Model](http://mng.bz/JD5Z), conforme descrito por [Martin Fowler](https://martinfowler.com/articles/richardsonMaturityModel.html): 
+
+![RMM](./src/main/resources/static/img/glory_of_rest.png)
+
+- As informações serão estruturadas na forma de recursos, que são identificados e recebem um endereço, permitindo a manipulação de recursos individuais. Cada recurso disponibiliza um conjunto de operações que são aplicadas sobre os próprios recursos.
+- Os microserviços respeitarão a semântica do protocolo utilizado pela API. As quatro operações básicas disponibilizadas pelo protocolo HTTP são GET, POST, PUT e DELETE, o que implica que recursos devem ser criados através da operação POST, alterados por PUT, recuperados por GET e removidos por DELETE. Esse nível de maturidade exige também o uso correto de status code, para descrever corretamente as respostas das requisições realizadas.
+- Os microserviços implementarão o conceito de [hipermídia como plataforma de estado da aplicação](https://en.wikipedia.org/wiki/HATEOAS), que adiciona controles hipermídia às representações, trazendo ainda mais flexibilidade porque possibilita mudanças de ambiente de execução em operações de cliente e na API.
 

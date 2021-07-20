@@ -11,9 +11,10 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter
-@Setter
+
+@Getter @Setter @ToString
 @Entity
 @Table(name="contrato")
 public class Contrato {
@@ -32,7 +33,7 @@ public class Contrato {
 	
 	private String processoContratacao;
 	
-	@OneToMany(mappedBy="ck")
+	@OneToMany(mappedBy="contrato")
 	private List<Vigencia> vigencias;
 	
 }

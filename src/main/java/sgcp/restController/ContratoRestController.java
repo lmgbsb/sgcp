@@ -1,13 +1,17 @@
 package sgcp.restController;
 
 import java.util.List;
+import java.util.Locale;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sgcp.model.Contrato;
@@ -15,6 +19,7 @@ import sgcp.model.ContratoKey;
 import sgcp.service.ContratoService;
 
 @RestController
+@RequestMapping("/api/contrato")
 public class ContratoRestController {
 	
 	private final ContratoService cs;
@@ -23,43 +28,51 @@ public class ContratoRestController {
 		this.cs=cs;
 	}
 	
-	@GetMapping("/api/contrato")
-	public List<Contrato> listarContratos(){
-		return cs.listaContratos();
+	@GetMapping
+	public ResponseEntity<List<Contrato>> listarContratos(){
+		return ResponseEntity.ok(cs.listaContratos());
 	}
 	
-	@PostMapping("/api/contrato")
-	public Contrato incluirContrato(@RequestBody Contrato contrato){
-				
-		
-		return cs.incluirContrato(contrato);
-		
-	}
-	
-	@DeleteMapping("/api/contrato")
-	public void excluirContrato(@RequestParam("numero") Integer number,
-								@RequestParam("ano") Integer year) {
+	@GetMapping("/{numero}/{ano}")
+	public ResponseEntity<Contrato> detalharContrato(
+										@PathVariable("numero") Integer number,
+										@PathVariable("ano") Integer year) {
 		
 		ContratoKey ck = new ContratoKey(number, year);
 		
-		cs.exluirContrato(ck);
+		Contrato contrato =  cs.detalharContrato(ck);
+		
+		return ResponseEntity.ok(contrato);
 		
 	}
 	
-	@PutMapping("/api/contrato")
-	public Contrato alterarContrato(@RequestBody Contrato contrato) {
-		
-		return cs.alterarContrato(contrato);
+	@PostMapping
+	public ResponseEntity<String> incluirContrato(
+									@RequestBody Contrato contrato,
+									@RequestHeader(value = "Accept-Language",required = false) Locale locale){
+						
+		return ResponseEntity.ok(cs.incluirContrato(contrato, locale));
 		
 	}
 	
-	@GetMapping("/api/contrato/detalhar")
-	public Contrato detalharContrato(@RequestParam("numero") Integer number,
-									 @RequestParam("ano") Integer year) {
+	@PutMapping("/{numero}/{ano}")
+	public ResponseEntity<String> alterarContrato(
+			@RequestBody Contrato contrato,
+			@RequestHeader(value = "Accept-Language",required = false) Locale locale){
 		
-		ContratoKey ck = new ContratoKey(number, year);
+		return ResponseEntity.ok(cs.alterarContrato(contrato, locale));
 		
-		return cs.detalharContrato(ck);
+	}
+	
+	@DeleteMapping("/{numero}/{ano}")
+	public ResponseEntity<String> excluirContrato(
+			@PathVariable("numero") Integer number,
+			@PathVariable("ano") Integer year,
+			@RequestHeader(value = "Accept-Language",required = false) Locale locale){
+
+			ContratoKey ck = new ContratoKey(number, year);
+						
+			return ResponseEntity.ok(cs.exluirContrato(ck, locale));	
 		
 	}
 

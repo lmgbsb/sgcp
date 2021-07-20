@@ -11,7 +11,9 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Getter
 @Setter
 @Entity
@@ -22,7 +24,7 @@ public class Vigencia {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_vigencia")
 	private Integer id;
-	private ContratoKey ck;
+	private ContratoKey contrato;
 	@Column(name="data_inicio")
 	private Date dataInicio;
 	@Column(name="data_fim")

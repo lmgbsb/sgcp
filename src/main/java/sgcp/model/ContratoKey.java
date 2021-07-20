@@ -6,6 +6,9 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import lombok.ToString;
+
+@ToString
 @Embeddable
 public class ContratoKey implements Serializable{
 
