@@ -1,5 +1,7 @@
 package sgcp.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,8 +15,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-@Table(name="pessoa")
-public class Pessoa {
+@Table(name="dados_pessoais")
+public class DadosPessoais {
 
 	@Id
 	@Column(name="cpf")
@@ -22,7 +24,7 @@ public class Pessoa {
 	@Column(name="nome")
 	private String nome;
 	private String email;
-	private String dataNascimento;
+	private Date dataNascimento;
 		
 	
 }

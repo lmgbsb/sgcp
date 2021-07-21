@@ -16,7 +16,7 @@ As principais informações a serem disponibilizadas por meio de relatórios e A
 
 * Relação de editais abertos por intervalo de tempo
 * Busca de contratos por objeto, número, intervalo de datas ou intervalo de valor
-* Detalhes de uma licitação (Número, Objeto, Data de abertura, Histórico do andamento, Grupos, Itens, Vencedor, Contrato, Valor total, Pagamentos, Fiscais)
+* Detalhes de uma licitação (Número, Objeto, Data de abertura, Histórico do andamento, Grupos, Itens, Vencedores, Contratos, Valor total, Pagamentos, Fiscais)
 * Relação de contratos de uma determinada empresa com um órgão público
 * Relação de pagamentos de cada contrato
 * Relação de contratos fiscalizados por determinado servidor
@@ -77,5 +77,5 @@ Os microserviços desse projeto utilizarão o formato JSON como formato de seria
 
 - As informações serão estruturadas na forma de recursos, que são identificados e recebem um endereço, permitindo a manipulação de recursos individuais. Cada recurso disponibiliza um conjunto de operações que são aplicadas sobre os próprios recursos.
 - Os microserviços respeitarão a semântica do protocolo utilizado pela API. As quatro operações básicas disponibilizadas pelo protocolo HTTP são GET, POST, PUT e DELETE, o que implica que recursos devem ser criados através da operação POST, alterados por PUT, recuperados por GET e removidos por DELETE. Esse nível de maturidade exige também o uso correto de status code, para descrever corretamente as respostas das requisições realizadas.
-- Os microserviços implementarão o conceito de [hipermídia como plataforma de estado da aplicação](https://en.wikipedia.org/wiki/HATEOAS), que adiciona controles hipermídia às representações, trazendo ainda mais flexibilidade porque possibilita mudanças de ambiente de execução em operações de cliente e na API.
+- Os microserviços implementarão o conceito de [hipermídia como plataforma de estado da aplicação](https://en.wikipedia.org/wiki/HATEOAS), que adiciona controles hipermídia às representações, trazendo ainda mais flexibilidade na medida em que possibilita mudanças de ambiente de execução em operações de cliente e na API.
 

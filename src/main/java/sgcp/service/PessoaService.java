@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import sgcp.model.Pessoa;
+import sgcp.model.DadosPessoais;
 import sgcp.repository.PessoaRepository;
 
 @Service
@@ -16,11 +16,11 @@ public class PessoaService {
 		this.pr = pr;
 	}
 	
-	public List<Pessoa> listarPessoas(){
+	public List<DadosPessoais> listarPessoas(){
 		return pr.findAll();
 	}
 	
-	public void IncluirPessoa(Pessoa p) {
+	public void IncluirPessoa(DadosPessoais p) {
 		pr.save(p);
 	}
 }

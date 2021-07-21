@@ -1,4 +1,4 @@
-INSERT INTO pessoa (cpf, nome, data_nascimento, email) VALUES 
+INSERT INTO dados_pessoais (cpf, nome, data_nascimento, email) VALUES 
 ('11928374098','Santiago Upton','1994-06-07','jking@example.org'),
 ('24458058721','Elsa Cassin','1982-12-25','prudence40@example.com'),
 ('28720002239','Prof. Wilford Koss','1986-09-09','annie96@example.com'),

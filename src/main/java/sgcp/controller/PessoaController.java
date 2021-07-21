@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import sgcp.model.Pessoa;
+import sgcp.model.DadosPessoais;
 import sgcp.service.PessoaService;
 
 @Controller
@@ -23,13 +23,13 @@ public class PessoaController {
 	public ModelAndView fip() {
 		
 		ModelAndView mv = new ModelAndView("incluirPessoa");
-		mv.addObject("person", new Pessoa());
+		mv.addObject("person", new DadosPessoais());
 		return mv;
 		
 	}
 	
 	@PostMapping("/pessoa")
-	public ModelAndView incluirPessoa(@ModelAttribute  Pessoa p) {
+	public ModelAndView incluirPessoa(@ModelAttribute  DadosPessoais p) {
 			
 		ps.IncluirPessoa(p);
 		
