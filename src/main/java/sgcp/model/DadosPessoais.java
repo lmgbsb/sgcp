@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,7 +18,7 @@ import lombok.ToString;
 @Setter
 @Entity
 @Table(name="dados_pessoais")
-public class DadosPessoais {
+public class DadosPessoais extends RepresentationModel<DadosPessoais>{
 
 	@Id
 	@Column(name="cpf")

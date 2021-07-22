@@ -1,5 +1,8 @@
 package sgcp.restController;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -56,8 +59,21 @@ public class DadosPessoaisRestController {
 	}
 	
 	@GetMapping("/{cpf}")
-	public ResponseEntity<Optional<DadosPessoais>> detalharDadosPessoais(@PathVariable String cpf){
+	public ResponseEntity<DadosPessoais> detalharDadosPessoais(@PathVariable String cpf){
 	
-		return ResponseEntity.ok(dps.detalharDadosPessoais(cpf));
+		Optional<DadosPessoais> dp = dps.detalharDadosPessoais(cpf);
+		
+		//caminho feliz
+		DadosPessoais dados = new DadosPessoais();
+		if(dp.isPresent()) {
+			dados = dp.get().add( 
+					linkTo(methodOn(DadosPessoaisRestController.class).excluirDadosPessoais(cpf)).withRel("excluirDadosPessoais")
+			);			
+		}
+		
+		return ResponseEntity.ok(dados);
+		
+		
+		
 	}
 }
