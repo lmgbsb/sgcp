@@ -1,10 +1,12 @@
 package sgcp.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.hateoas.RepresentationModel;
@@ -28,5 +30,6 @@ public class DadosPessoais extends RepresentationModel<DadosPessoais>{
 	private String email;
 	private Date dataNascimento;
 		
-	
+	@OneToMany(mappedBy="cpf")
+	private List<Telefone> telefones;
 }
