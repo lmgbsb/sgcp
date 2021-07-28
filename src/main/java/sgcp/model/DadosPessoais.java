@@ -30,6 +30,6 @@ public class DadosPessoais extends RepresentationModel<DadosPessoais>{
 	private String email;
 	private Date dataNascimento;
 		
-	@OneToMany(mappedBy="cpf")
-	private List<Telefone> telefones;
+	//@OneToMany(mappedBy="cpf")
+	//private List<Telefone> telefones;
 }

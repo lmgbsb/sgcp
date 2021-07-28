@@ -2,10 +2,11 @@ package sgcp.service;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import sgcp.dto.TelefoneDTO;
+import sgcp.mapper.TelefoneMapper;
 import sgcp.model.Telefone;
 import sgcp.repository.TelefoneRepository;
 
@@ -28,6 +29,14 @@ public class TelefoneService {
 	public List<Telefone> listarTelefones() {
 		
 		return tr.findAll();
+		
+	}
+
+	public Telefone alterarTelefone(TelefoneDTO telefoneDTO) {
+		
+		Telefone telefone = TelefoneMapper.INSTANCE.toModel(telefoneDTO);
+		
+		return tr.save(telefone);
 		
 	}
 }

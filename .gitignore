@@ -1,5 +1,8 @@
 bin/
 
+.attach_pid33239
+.attach_pid41367
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
