@@ -14,6 +14,7 @@ import sgcp.repository.TelefoneRepository;
 public class TelefoneService {
 	
 	private final TelefoneRepository tr;
+	private final TelefoneMapper mapper = TelefoneMapper.INSTANCE;
 	
 
 	public TelefoneService(TelefoneRepository tr) {
@@ -34,7 +35,7 @@ public class TelefoneService {
 
 	public Telefone alterarTelefone(TelefoneDTO telefoneDTO) {
 		
-		Telefone telefone = TelefoneMapper.INSTANCE.toModel(telefoneDTO);
+		Telefone telefone = mapper.toModel(telefoneDTO);
 		
 		return tr.save(telefone);
 		
