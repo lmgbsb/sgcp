@@ -1,11 +1,10 @@
 package sgcp.restController;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
 import java.util.List;
-import java.util.Optional;
 
+import javax.validation.Valid;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import sgcp.dto.DadosPessoaisDTO;
+import sgcp.exception.DadosPessoaisNaoEncontradosException;
 import sgcp.model.DadosPessoais;
 import sgcp.service.DadosPessoaisService;
 
@@ -37,43 +39,46 @@ public class DadosPessoaisRestController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<DadosPessoais> incluirDadosPessoais(@RequestBody DadosPessoais dp){
+	public ResponseEntity<DadosPessoais> incluirDadosPessoais(@RequestBody @Valid DadosPessoaisDTO dto){
 		
-		return ResponseEntity.ok(dps.incluirDadosPessoais(dp));
+		return ResponseEntity.ok(dps.incluirDadosPessoais(dto));
 		
 	}
 	
 	@DeleteMapping("/{cpf}")
-	public ResponseEntity excluirDadosPessoais(@PathVariable String cpf) {
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void excluirDadosPessoais(@PathVariable String cpf) throws DadosPessoaisNaoEncontradosException {
 		
 		dps.excluirDadosPessoais(cpf);
-		
-		return ResponseEntity.ok(null);
 	}
 	
-	@PutMapping
-	public ResponseEntity<DadosPessoais> alterarDadosPessoais(@RequestBody DadosPessoais dp){
+	@PutMapping("/{cpf}")
+	public DadosPessoais alterarDadosPessoais(
+			@PathVariable String cpf, 
+			@RequestBody @Valid DadosPessoaisDTO dto)  throws DadosPessoaisNaoEncontradosException {
 		
-		return ResponseEntity.ok(dps.alterarDadosPessoais(dp));
+		return dps.alterarDadosPessoais(cpf, dto);
 		
 	}
 	
-	@GetMapping("/{cpf}")
-	public ResponseEntity<DadosPessoais> detalharDadosPessoais(@PathVariable String cpf){
+	/*
+	 * @GetMapping("/{cpf}") public ResponseEntity<DadosPessoais>
+	 * detalharDadosPessoais(@PathVariable String cpf){
+	 * 
+	 * Optional<DadosPessoais> dp = dps.detalharDadosPessoais(cpf);
+	 * 
+	 * //caminho feliz DadosPessoais dados = new DadosPessoais(); if(dp.isPresent())
+	 * { dados = dp.get().add(
+	 * linkTo(methodOn(DadosPessoaisRestController.class).excluirDadosPessoais(cpf))
+	 * .withRel("excluirDadosPessoais") ); }
+	 * 
+	 * return ResponseEntity.ok(dados); }
+	 */
 	
-		Optional<DadosPessoais> dp = dps.detalharDadosPessoais(cpf);
+		@GetMapping("/{cpf}") 
+		public DadosPessoais detalharDadosPessoais(@PathVariable String cpf) throws DadosPessoaisNaoEncontradosException {
 		
-		//caminho feliz
-		DadosPessoais dados = new DadosPessoais();
-		if(dp.isPresent()) {
-			dados = dp.get().add( 
-					linkTo(methodOn(DadosPessoaisRestController.class).excluirDadosPessoais(cpf)).withRel("excluirDadosPessoais")
-			);			
+			return dps.detalharDadosPessoais(cpf);
+			
 		}
-		
-		return ResponseEntity.ok(dados);
-		
-		
-		
-	}
 }
