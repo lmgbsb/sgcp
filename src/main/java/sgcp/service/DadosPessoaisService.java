@@ -1,10 +1,12 @@
 package sgcp.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import sgcp.dto.DadosPessoaisDTO;
+import sgcp.exception.DadosPessoaisNaoEncontradosException;
+import sgcp.mapper.DadosPessoaisMapper;
 import sgcp.model.DadosPessoais;
 import sgcp.repository.DadosPessoaisRepository;
 
@@ -12,6 +14,7 @@ import sgcp.repository.DadosPessoaisRepository;
 public class DadosPessoaisService {
 
 	private final DadosPessoaisRepository dpr;
+	private final DadosPessoaisMapper mapper = DadosPessoaisMapper.INSTANCE;
 	
 	public DadosPessoaisService(DadosPessoaisRepository dpr) {
 		this.dpr = dpr;
@@ -23,26 +26,38 @@ public class DadosPessoaisService {
 		
 	}
 
-	public DadosPessoais incluirDadosPessoais(DadosPessoais dp) {
+	public DadosPessoais incluirDadosPessoais(DadosPessoaisDTO dto) {
 
+		DadosPessoais dp = mapper.toModel(dto);		
 		return dpr.save(dp);
 	}
 
-	public void excluirDadosPessoais(String cpf) {
+	public DadosPessoais alterarDadosPessoais(String cpf, DadosPessoaisDTO dto)  throws DadosPessoaisNaoEncontradosException {
 		
+		verificaExistenciaDadosPessoais(cpf);
+		DadosPessoais dp = mapper.toModel(dto);
+		return dpr.save(dp);
+		
+	}
+
+	public DadosPessoais detalharDadosPessoais(String cpf) throws DadosPessoaisNaoEncontradosException {
+		
+		DadosPessoais dp = verificaExistenciaDadosPessoais(cpf);					
+		return dp;
+		
+	}
+	
+	public void excluirDadosPessoais(String cpf) throws DadosPessoaisNaoEncontradosException {		
+
+		verificaExistenciaDadosPessoais(cpf);		
 		dpr.deleteById(cpf);
 		
 	}
-
-	public DadosPessoais alterarDadosPessoais(DadosPessoais dp) {
+	
+	private DadosPessoais verificaExistenciaDadosPessoais(String cpf) throws DadosPessoaisNaoEncontradosException {
 		
-		return dpr.save(dp);
-		
+		DadosPessoais dp = dpr.findById(cpf).orElseThrow(() -> new DadosPessoaisNaoEncontradosException(cpf));
+		return dp;
 	}
 
-	public Optional<DadosPessoais> detalharDadosPessoais(String cpf) {
-		
-		return dpr.findById(cpf);
-		
-	}
 }
