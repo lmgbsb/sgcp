@@ -37,9 +37,12 @@ As principais tecnologias utilizadas no desenvolvimento são
 - Spring Boot
 - JPA
 - Swagger
-- Thymeleaf
+- Junit 5
+- Jakarta Bean Validation
 - MySQL
 
+
+A codificação observará os padrões de código fonte do [Spring Framework Code Style Guide](https://github.com/spring-projects/spring-framework/wiki/Code-Style).
 
 O desenvolvimento do projeto será orientado pelas diretrizes do [twelve-factor app](https://12factor.net/), uma  metodologia para construir softwares-como-serviço que:
 

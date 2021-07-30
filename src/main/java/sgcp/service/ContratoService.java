@@ -7,6 +7,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import sgcp.dto.ContratoDTO;
+import sgcp.mapper.ContratoMapper;
 import sgcp.model.Contrato;
 import sgcp.model.ContratoKey;
 import sgcp.repository.ContratoRepository;
@@ -14,32 +16,31 @@ import sgcp.repository.ContratoRepository;
 @Service
 public class ContratoService {
 
-	private final ContratoRepository cr;
-
+	private final ContratoRepository contratoRepository;
 	private final MessageSource messages;
+	private ContratoMapper mapper = ContratoMapper.INSTANCE;
 	
-	public ContratoService(ContratoRepository cr, MessageSource messages) {
-		
-		this.cr = cr;
+	public ContratoService(ContratoRepository contratoRepository, MessageSource messages) {		
+		this.contratoRepository = contratoRepository;
 		this.messages = messages;
-	}
-	
+	}	
 	public List<Contrato> listaContratos(){
-		return cr.findAll();
+		return contratoRepository.findAll();
 	}
-
-	public String incluirContrato(Contrato contrato, Locale locale) {
-		
-		String responseMessage = null;
-		
+	/*
+	public String incluirContrato(Contrato contrato, Locale locale) {		
+		String responseMessage = null;		
 		if(!StringUtils.isEmpty(contrato)) {
-
-			Contrato c = cr.save(contrato);			
-			responseMessage = String.format(messages.getMessage("contrato.create.message",null,locale), c.toString());
+			Contrato c = contratoRepository.save(contrato);			
+			responseMessage = String.format(messages.getMessage("contrato.contratoRepositoryeate.message",null,locale), c.toString());
 		}
-
 		System.out.println("Contrato incluído com sucesso");	
 		return responseMessage;		
+	}
+	*/
+	public Contrato incluirContrato(ContratoDTO contratoDTO) {
+		Contrato contrato = mapper.toModel(contratoDTO);
+		return contratoRepository.save(contrato);
 	}
 	
 	public String alterarContrato(Contrato contrato, Locale locale) {
@@ -48,7 +49,7 @@ public class ContratoService {
 		
 		if(!StringUtils.isEmpty(contrato)) {
 
-			Contrato c = cr.save(contrato);			
+			Contrato c = contratoRepository.save(contrato);			
 			responseMessage = String.format(messages.getMessage("contrato.update.message",null,locale), c.toString());
 		}
 
@@ -62,7 +63,7 @@ public class ContratoService {
 		
 		if(!StringUtils.isEmpty(ck)) {
 
-			cr.deleteById(ck);			
+			contratoRepository.deleteById(ck);			
 			responseMessage = String.format(messages.getMessage("contrato.delete.message",null,locale), ck.toString());
 		}
 
@@ -72,7 +73,7 @@ public class ContratoService {
 
 	public Contrato detalharContrato(ContratoKey ck) {
 		
-		Contrato contrato =  cr.getById(ck);		
+		Contrato contrato =  contratoRepository.getById(ck);		
 		return contrato;
 	}
 }

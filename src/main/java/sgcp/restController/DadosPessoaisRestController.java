@@ -39,10 +39,9 @@ public class DadosPessoaisRestController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<DadosPessoais> incluirDadosPessoais(@RequestBody @Valid DadosPessoaisDTO dto){
-		
-		return ResponseEntity.ok(dps.incluirDadosPessoais(dto));
-		
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<DadosPessoais> incluirDadosPessoais(@RequestBody @Valid DadosPessoaisDTO dto){		
+		return ResponseEntity.ok(dps.incluirDadosPessoais(dto));		
 	}
 	
 	@DeleteMapping("/{cpf}")
