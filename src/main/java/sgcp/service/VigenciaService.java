@@ -10,32 +10,23 @@ import sgcp.repository.VigenciaRepository;
 @Service
 public class VigenciaService {
 	
-	private VigenciaRepository vr;
 	
-	public VigenciaService(VigenciaRepository vr) {
-		
-		this.vr = vr;
-		
+	private VigenciaRepository vigenciaRepository;
+	
+	
+	public VigenciaService(VigenciaRepository vigenciaRepository) {
+		this.vigenciaRepository = vigenciaRepository;
 	}
-	
 	public List<Vigencia> listarVigencias(){
-		return vr.findAll();
+		return vigenciaRepository.findAll();
 	}
-
 	public Vigencia incluirVigencia(Vigencia vigencia) {
-		return vr.save(vigencia);
+		return vigenciaRepository.save(vigencia);
 	}
-
-	public Vigencia alterarVigencia(Vigencia vigencia) {
-		
-		return vr.save(vigencia);
-		
+	public Vigencia alterarVigencia(Vigencia vigencia) {	
+		return vigenciaRepository.save(vigencia);
 	}
-
-	public void excluirVigencia(Integer idVigencia) {
-		
-		vr.deleteById(idVigencia);
-		
+	public void excluirVigencia(Integer idVigencia) {	
+		vigenciaRepository.deleteById(idVigencia);
 	}
-
 }

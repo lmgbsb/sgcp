@@ -10,17 +10,17 @@ import sgcp.repository.PessoaRepository;
 @Service
 public class PessoaService {
 
-	private final PessoaRepository pr;
 	
-	public PessoaService(PessoaRepository pr) {
-		this.pr = pr;
-	}
+	private final PessoaRepository pessoaRepository;
 	
+	
+	public PessoaService(PessoaRepository pessoaRepository) {
+		this.pessoaRepository = pessoaRepository;
+	}	
 	public List<DadosPessoais> listarPessoas(){
-		return pr.findAll();
-	}
-	
+		return pessoaRepository.findAll();
+	}	
 	public void IncluirPessoa(DadosPessoais p) {
-		pr.save(p);
+		pessoaRepository.save(p);
 	}
 }

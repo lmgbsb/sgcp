@@ -26,7 +26,11 @@ import sgcp.service.ContratoService;
 @RestController
 @RequestMapping("/api/contrato")
 public class ContratoRestController {	
+	
+	
 	private final ContratoService contratoService;	
+	
+	
 	public ContratoRestController(ContratoService contratoService) {
 		this.contratoService=contratoService;
 	}	
@@ -66,8 +70,7 @@ public class ContratoRestController {
 			@RequestHeader(value = "Accept-Language",required = false) Locale locale){
 		
 		return ResponseEntity.ok(contratoService.alterarContrato(contrato, locale));		
-	}
-	
+	}	
 	@DeleteMapping("/{numero}/{ano}")
 	public ResponseEntity<String> excluirContrato(
 			@PathVariable("numero") Integer number,

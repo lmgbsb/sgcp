@@ -7,6 +7,8 @@ import lombok.Data;
 
 @Data
 public class TelefoneDTO {
+	
+	
 	private Integer id;	
 	private String cpf;	
 	@Size(min=1, max=3)

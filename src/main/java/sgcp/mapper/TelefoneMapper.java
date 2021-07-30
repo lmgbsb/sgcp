@@ -10,8 +10,8 @@ import sgcp.model.Telefone;
 @Mapper
 public interface TelefoneMapper {
 	
-	TelefoneMapper INSTANCE = Mappers.getMapper(TelefoneMapper.class);
 	
+	TelefoneMapper INSTANCE = Mappers.getMapper(TelefoneMapper.class);	
 	Telefone toModel(TelefoneDTO telefoneDTO);	
 	TelefoneDTO toDTO(Telefone telefone);
 }

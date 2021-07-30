@@ -35,7 +35,6 @@ public class SwaggerConfig {
         plugins.add(new CollectionJsonLinkDiscoverer());
         return new LinkDiscoverers(SimplePluginRegistry.create(plugins));
     }
-	
     public Docket apiAdmin() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()

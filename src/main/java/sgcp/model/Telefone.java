@@ -15,6 +15,8 @@ import lombok.Setter;
 @Entity
 @Table(name = "telefone")
 public class Telefone {
+	
+	
 	@Id
 	@Column(name = "id_telefone")
 	@GeneratedValue(strategy = GenerationType.AUTO)

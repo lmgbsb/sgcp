@@ -24,7 +24,11 @@ import sgcp.service.DadosPessoaisService;
 @RestController
 @RequestMapping("/api/dadospessoais")
 public class DadosPessoaisRestController {
+	
+	
 	private final DadosPessoaisService dadosPessoaisService;	
+	
+	
 	public DadosPessoaisRestController(DadosPessoaisService dadosPessoaisService) {
 		this.dadosPessoaisService = dadosPessoaisService;
 	}

@@ -21,7 +21,11 @@ import sgcp.service.TelefoneService;
 @RestController
 @RequestMapping("/api/telefone")
 public class TelefoneRestController {
+	
+	
 	public final TelefoneService ts;	
+	
+	
 	public TelefoneRestController(TelefoneService ts) {		
 		this.ts=ts;		
 	}	

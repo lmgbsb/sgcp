@@ -13,31 +13,22 @@ import sgcp.repository.TelefoneRepository;
 @Service
 public class TelefoneService {
 	
-	private final TelefoneRepository tr;
+	
+	private final TelefoneRepository telefoneRepository;
 	private final TelefoneMapper mapper = TelefoneMapper.INSTANCE;
 	
 
-	public TelefoneService(TelefoneRepository tr) {
-		this.tr = tr;
+	public TelefoneService(TelefoneRepository telefoneRepository) {
+		this.telefoneRepository = telefoneRepository;
 	}
-	
-	public Telefone incluirTelefone(@RequestBody Telefone phone){
-		
-		return tr.save(phone);
-		
+	public Telefone incluirTelefone(@RequestBody Telefone phone){	
+		return telefoneRepository.save(phone);
 	}
-
-	public List<Telefone> listarTelefones() {
-		
-		return tr.findAll();
-		
+	public List<Telefone> listarTelefones() {	
+		return telefoneRepository.findAll();
 	}
-
-	public Telefone alterarTelefone(TelefoneDTO telefoneDTO) {
-		
+	public Telefone alterarTelefone(TelefoneDTO telefoneDTO) {	
 		Telefone telefone = mapper.toModel(telefoneDTO);
-		
-		return tr.save(telefone);
-		
+		return telefoneRepository.save(telefone);
 	}
 }

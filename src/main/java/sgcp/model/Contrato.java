@@ -13,11 +13,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Getter @Setter @ToString
 @Entity
 @Table(name="contrato")
 public class Contrato {	
+	
+	
 	@EmbeddedId
     private ContratoKey id;	
 	@Column(name="objeto")

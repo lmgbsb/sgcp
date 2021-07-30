@@ -16,9 +16,11 @@ import sgcp.repository.ContratoRepository;
 @Service
 public class ContratoService {
 
+	
 	private final ContratoRepository contratoRepository;
 	private final MessageSource messages;
 	private ContratoMapper mapper = ContratoMapper.INSTANCE;
+	
 	
 	public ContratoService(ContratoRepository contratoRepository, MessageSource messages) {		
 		this.contratoRepository = contratoRepository;
@@ -41,38 +43,26 @@ public class ContratoService {
 	public Contrato incluirContrato(ContratoDTO contratoDTO) {
 		Contrato contrato = mapper.toModel(contratoDTO);
 		return contratoRepository.save(contrato);
-	}
-	
+	}	
 	public String alterarContrato(Contrato contrato, Locale locale) {
-		
 		String responseMessage = null;
-		
 		if(!StringUtils.isEmpty(contrato)) {
-
 			Contrato c = contratoRepository.save(contrato);			
 			responseMessage = String.format(messages.getMessage("contrato.update.message",null,locale), c.toString());
 		}
-
 		System.out.println("Contrato alterado com sucesso");	
 		return responseMessage;		
 	}
-
-	public String exluirContrato(ContratoKey ck, Locale locale) {
-		
+	public String exluirContrato(ContratoKey ck, Locale locale) {	
 		String responseMessage = null;
-		
-		if(!StringUtils.isEmpty(ck)) {
-
+		if(!StringUtils.isEmpty(ck)){
 			contratoRepository.deleteById(ck);			
 			responseMessage = String.format(messages.getMessage("contrato.delete.message",null,locale), ck.toString());
 		}
-
 		System.out.println("Contrato excluído com sucesso");	
 		return responseMessage;				
 	}
-
-	public Contrato detalharContrato(ContratoKey ck) {
-		
+	public Contrato detalharContrato(ContratoKey ck){	
 		Contrato contrato =  contratoRepository.getById(ck);		
 		return contrato;
 	}

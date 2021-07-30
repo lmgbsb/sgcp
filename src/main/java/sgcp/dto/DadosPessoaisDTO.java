@@ -16,6 +16,8 @@ import sgcp.model.Telefone;
 
 @Data
 public class DadosPessoaisDTO {
+	
+	
 	@CPF
 	private String cpf;	
 	@NotEmpty

@@ -25,6 +25,8 @@ import lombok.ToString;
 @Entity
 @Table(name="dados_pessoais")
 public class DadosPessoais extends RepresentationModel<DadosPessoais>{
+	
+	
 	@Id
 	@Column(name="cpf")
 	private String cpf;

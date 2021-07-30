@@ -17,7 +17,11 @@ import sgcp.service.VigenciaService;
 @RequestMapping("/api/vigencia")
 @RestController
 public class VigenciaRestController {
+	
+	
 	private VigenciaService vs;	
+	
+	
 	public VigenciaRestController(VigenciaService vs) {
 		this.vs = vs;
 	}	
