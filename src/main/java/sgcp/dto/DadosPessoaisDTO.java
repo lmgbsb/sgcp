@@ -16,21 +16,16 @@ import sgcp.model.Telefone;
 
 @Data
 public class DadosPessoaisDTO {
-
 	@CPF
-	private String cpf;
-	
+	private String cpf;	
 	@NotEmpty
     @Size(min = 2, max = 100)
 	private String nome;
-
 	@Email(message = "Email deve ser válido")
 	@Pattern(regexp=".+@.+\\..+", message = "Email deve ser válido")
-	private String email;
-	
+	private String email;	
 	@NotNull
-	private String dataNascimento;
-		
+	private String dataNascimento;		
 	@Valid
 	private List<Telefone> telefones;
 }

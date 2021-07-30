@@ -12,8 +12,8 @@ public interface DadosPessoaisMapper {
 
 	DadosPessoaisMapper INSTANCE = Mappers.getMapper(DadosPessoaisMapper.class);
 	
-	@Mapping(target = "dataNascimento", source = "dataNascimento", dateFormat = "dd/MM/yyyy")
-	DadosPessoais toModel(DadosPessoaisDTO dadosPessoaisDTO);
+	@Mapping(target = "dataNascimento", source = "dto.dataNascimento", dateFormat = "dd/MM/yyyy")
+	DadosPessoais toModel(DadosPessoaisDTO dto);
 	DadosPessoaisDTO toDTO(DadosPessoais dadosPessoais);
 	
 }

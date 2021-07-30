@@ -1,6 +1,6 @@
 package sgcp.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,23 +17,16 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @Entity
 @Table(name="contrato")
-public class Contrato {
-	
+public class Contrato {	
 	@EmbeddedId
-    private ContratoKey id;
-	
+    private ContratoKey id;	
 	@Column(name="objeto")
-	private String objeto;
-	
+	private String objeto;	
 	@Column(name="data_assinatura")
-	private Date dataAssinatura;
-	
+	private LocalDate dataAssinatura;	
 	@Column(name="valor")
-	private float valor;
-	
-	private String processoContratacao;
-	
+	private double valor;	
+	private String processoContratacao;	
 	@OneToMany(mappedBy="contrato")
-	private List<Vigencia> vigencias;
-	
+	private List<Vigencia> vigencias;	
 }

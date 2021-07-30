@@ -3,6 +3,9 @@ package sgcp.restController;
 import java.util.List;
 import java.util.Locale;
 
+import javax.validation.Valid;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import sgcp.dto.ContratoDTO;
 import sgcp.model.Contrato;
 import sgcp.model.ContratoKey;
 import sgcp.service.ContratoService;
@@ -22,15 +27,15 @@ import sgcp.service.ContratoService;
 @RequestMapping("/api/contrato")
 public class ContratoRestController {
 	
-	private final ContratoService cs;
+	private final ContratoService contratoService;
 	
-	public ContratoRestController(ContratoService cs) {
-		this.cs=cs;
+	public ContratoRestController(ContratoService contratoService) {
+		this.contratoService=contratoService;
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Contrato>> listarContratos(){
-		return ResponseEntity.ok(cs.listaContratos());
+	public List<Contrato> listarContratos(){
+		return contratoService.listaContratos();
 	}
 	
 	@GetMapping("/{numero}/{ano}")
@@ -40,19 +45,27 @@ public class ContratoRestController {
 		
 		ContratoKey ck = new ContratoKey(number, year);
 		
-		Contrato contrato =  cs.detalharContrato(ck);
+		Contrato contrato =  contratoService.detalharContrato(ck);
 		
 		return ResponseEntity.ok(contrato);
 		
 	}
 	
+	/*
 	@PostMapping
 	public ResponseEntity<String> incluirContrato(
 									@RequestBody Contrato contrato,
 									@RequestHeader(value = "Accept-Language",required = false) Locale locale){
 						
-		return ResponseEntity.ok(cs.incluirContrato(contrato, locale));
+		return ResponseEntity.ok(contratoService.incluirContrato(contrato, locale));
 		
+	}
+	*/
+	
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public Contrato incluirContrato(@RequestBody @Valid ContratoDTO contratoDTO) {
+		return contratoService.incluirContrato(contratoDTO);
 	}
 	
 	@PutMapping("/{numero}/{ano}")
@@ -60,7 +73,7 @@ public class ContratoRestController {
 			@RequestBody Contrato contrato,
 			@RequestHeader(value = "Accept-Language",required = false) Locale locale){
 		
-		return ResponseEntity.ok(cs.alterarContrato(contrato, locale));
+		return ResponseEntity.ok(contratoService.alterarContrato(contrato, locale));
 		
 	}
 	
@@ -72,7 +85,7 @@ public class ContratoRestController {
 
 			ContratoKey ck = new ContratoKey(number, year);
 						
-			return ResponseEntity.ok(cs.exluirContrato(ck, locale));	
+			return ResponseEntity.ok(contratoService.exluirContrato(ck, locale));	
 		
 	}
 
