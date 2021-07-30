@@ -15,5 +15,4 @@ public interface DadosPessoaisMapper {
 	@Mapping(target = "dataNascimento", source = "dto.dataNascimento", dateFormat = "dd/MM/yyyy")
 	DadosPessoais toModel(DadosPessoaisDTO dto);
 	DadosPessoaisDTO toDTO(DadosPessoais dadosPessoais);
-	
 }

@@ -14,8 +14,7 @@ public class SgcpApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SgcpApplication.class, args);
-	}
-	
+	}	
 	@Bean
 	public LocaleResolver localeResolver() {
 		SessionLocaleResolver localeResolver = new SessionLocaleResolver();
@@ -29,5 +28,4 @@ public class SgcpApplication {
 		messageSource.setBasenames("messages");
 		return messageSource;
 	}
-
 }

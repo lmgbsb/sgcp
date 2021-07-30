@@ -11,7 +11,11 @@ import sgcp.service.PessoaService;
 
 @Controller
 public class PessoaController {	
+	
+	
 	private final PessoaService ps;	
+	
+	
 	public PessoaController(PessoaService ps) {
 		this.ps=ps;
 	}
