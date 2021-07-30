@@ -25,16 +25,13 @@ import lombok.ToString;
 @Entity
 @Table(name="dados_pessoais")
 public class DadosPessoais extends RepresentationModel<DadosPessoais>{
-
 	@Id
 	@Column(name="cpf")
 	private String cpf;
 	@Column(name="nome")
 	private String nome;
-	private String email;
-	
-	private LocalDate dataNascimento;
-		
+	private String email;	
+	private LocalDate dataNascimento;		
 	@OneToMany(mappedBy="cpf")
 	private List<Telefone> telefones;
 }

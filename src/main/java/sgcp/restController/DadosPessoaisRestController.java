@@ -24,47 +24,37 @@ import sgcp.service.DadosPessoaisService;
 @RestController
 @RequestMapping("/api/dadospessoais")
 public class DadosPessoaisRestController {
-
-	private final DadosPessoaisService dps;
-	
-	public DadosPessoaisRestController(DadosPessoaisService dps) {
-		this.dps = dps;
+	private final DadosPessoaisService dadosPessoaisService;	
+	public DadosPessoaisRestController(DadosPessoaisService dadosPessoaisService) {
+		this.dadosPessoaisService = dadosPessoaisService;
 	}
-	
 	@GetMapping
-	public ResponseEntity<List<DadosPessoais>> listarDadosPessoais(){
-		
-		return ResponseEntity.ok(dps.listarDadosPessoais());
-		
-	}
-	
+	public ResponseEntity<List<DadosPessoais>> listarDadosPessoais(){		
+		return ResponseEntity.ok(dadosPessoaisService.listarDadosPessoais());		
+	}	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<DadosPessoais> incluirDadosPessoais(@RequestBody @Valid DadosPessoaisDTO dto){		
-		return ResponseEntity.ok(dps.incluirDadosPessoais(dto));		
-	}
-	
+		return ResponseEntity.ok(dadosPessoaisService.incluirDadosPessoais(dto));		
+	}	
 	@DeleteMapping("/{cpf}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void excluirDadosPessoais(@PathVariable String cpf) throws DadosPessoaisNaoEncontradosException {
-		
-		dps.excluirDadosPessoais(cpf);
-	}
-	
+		dadosPessoaisService.excluirDadosPessoais(cpf);
+	}	
 	@PutMapping("/{cpf}")
 	public DadosPessoais alterarDadosPessoais(
 			@PathVariable String cpf, 
 			@RequestBody @Valid DadosPessoaisDTO dto)  throws DadosPessoaisNaoEncontradosException {
 		
-		return dps.alterarDadosPessoais(cpf, dto);
-		
+		return dadosPessoaisService.alterarDadosPessoais(cpf, dto);
 	}
 	
 	/*
 	 * @GetMapping("/{cpf}") public ResponseEntity<DadosPessoais>
 	 * detalharDadosPessoais(@PathVariable String cpf){
 	 * 
-	 * Optional<DadosPessoais> dp = dps.detalharDadosPessoais(cpf);
+	 * Optional<DadosPessoais> dp = dadosPessoaisService.detalharDadosPessoais(cpf);
 	 * 
 	 * //caminho feliz DadosPessoais dados = new DadosPessoais(); if(dp.isPresent())
 	 * { dados = dp.get().add(
@@ -74,10 +64,8 @@ public class DadosPessoaisRestController {
 	 * return ResponseEntity.ok(dados); }
 	 */
 	
-		@GetMapping("/{cpf}") 
-		public DadosPessoais detalharDadosPessoais(@PathVariable String cpf) throws DadosPessoaisNaoEncontradosException {
-		
-			return dps.detalharDadosPessoais(cpf);
-			
-		}
+	@GetMapping("/{cpf}") 
+	public DadosPessoais detalharDadosPessoais(@PathVariable String cpf) throws DadosPessoaisNaoEncontradosException {
+		return dadosPessoaisService.detalharDadosPessoais(cpf);
+	}
 }

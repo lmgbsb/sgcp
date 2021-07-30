@@ -15,14 +15,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "telefone")
 public class Telefone {
-
 	@Id
 	@Column(name = "id_telefone")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	
-	private String cpf;
-	
+	private Integer id;	
+	private String cpf;	
 	private Integer ddi;
 	private Integer ddd;
 	private Integer numero;

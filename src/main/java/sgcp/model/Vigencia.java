@@ -19,7 +19,6 @@ import lombok.ToString;
 @Entity
 @Table(name="vigencia")
 public class Vigencia {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_vigencia")

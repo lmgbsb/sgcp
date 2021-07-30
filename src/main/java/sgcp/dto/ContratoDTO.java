@@ -10,7 +10,6 @@ import sgcp.model.Vigencia;
 
 @Data
 public class ContratoDTO {
-
     private String numero;
     private String ano;
 	private String objeto;	

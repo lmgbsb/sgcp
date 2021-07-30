@@ -10,32 +10,23 @@ import sgcp.model.DadosPessoais;
 import sgcp.service.PessoaService;
 
 @Controller
-public class PessoaController {
-	
-	private final PessoaService ps;
-	
+public class PessoaController {	
+	private final PessoaService ps;	
 	public PessoaController(PessoaService ps) {
 		this.ps=ps;
 	}
-
 	/*Formulário inclusão pessoa*/
 	@GetMapping("/pessoa")
-	public ModelAndView fip() {
-		
+	public ModelAndView fip() {		
 		ModelAndView mv = new ModelAndView("incluirPessoa");
 		mv.addObject("person", new DadosPessoais());
-		return mv;
-		
-	}
-	
+		return mv;		
+	}	
 	@PostMapping("/pessoa")
-	public ModelAndView incluirPessoa(@ModelAttribute  DadosPessoais p) {
-			
-		ps.IncluirPessoa(p);
-		
+	public ModelAndView incluirPessoa(@ModelAttribute  DadosPessoais p) {			
+		ps.IncluirPessoa(p);		
 		ModelAndView mv = new ModelAndView("confirmaInclusaoPessoa");
-		mv.addObject("criatura", p);
-		
+		mv.addObject("criatura", p);		
 		return mv;
 	}
 }

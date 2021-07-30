@@ -21,44 +21,28 @@ import sgcp.service.TelefoneService;
 @RestController
 @RequestMapping("/api/telefone")
 public class TelefoneRestController {
-
-	public final TelefoneService ts;
-	
-	public TelefoneRestController(TelefoneService ts) {
-		
-		this.ts=ts;
-		
-	}
-	
+	public final TelefoneService ts;	
+	public TelefoneRestController(TelefoneService ts) {		
+		this.ts=ts;		
+	}	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Telefone incluirTelefone(Telefone phone) {
-
-		return ts.incluirTelefone(phone);
-		
-	}
-	
+		return ts.incluirTelefone(phone);		
+	}	
 	@GetMapping
-	public List<Telefone> listarTelefones(){
-		
-		return ts.listarTelefones();
-		
+	public List<Telefone> listarTelefones(){		
+		return ts.listarTelefones();		
 	}
-
 	@PutMapping("/{idTelefone}")
 	@ResponseStatus(HttpStatus.OK)
 	public Telefone alterarTelefone(@PathVariable Integer idTelefone, @RequestBody @Valid TelefoneDTO telefoneDTO) {
-		
 		if(verificaExistenciaTelefone(idTelefone)) {
 			return ts.alterarTelefone(telefoneDTO);
 		}
-		
 		return null;
 	}
-
 	public boolean verificaExistenciaTelefone(Integer id) {
-		
-		
 		return true;
 	}
 }
