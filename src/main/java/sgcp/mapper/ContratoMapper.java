@@ -12,9 +12,10 @@ public interface ContratoMapper {
 
 	
 	public ContratoMapper INSTANCE = Mappers.getMapper(ContratoMapper.class);
-	@Mapping(target = "dataAssinatura", source = "dto.dataAssinatura", dateFormat = "dd/MM/yyyy")
-	@Mapping(target = "id.numero", source = "dto.numero")
-	@Mapping(target = "id.ano", source = "dto.ano")
+	
+	
+	@Mapping(source = "dto.dataAssinatura", target = "dataAssinatura", dateFormat = "dd/MM/yyyy")
+	@Mapping(source = "dto.numero", target = "id.numero")
+	@Mapping(source = "dto.ano", target = "id.ano")
 	Contrato toModel(ContratoDTO dto);
-	ContratoDTO toDTO(Contrato contrato);
 }

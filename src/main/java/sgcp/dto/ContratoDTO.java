@@ -16,6 +16,7 @@ public class ContratoDTO {
     private String ano;
 	private String objeto;	
 	@NotNull
+	@Pattern(regexp="\\d{2}+\\/\\d{2}+\\/\\d{4}$", message = "Informe a data no formato dd/mm/aaaa")
 	private String dataAssinatura;	
 	private String valor;	
 	@Pattern(regexp=".+\\/+\\d{4}$", message = "Processo de contratação deve ser válido")

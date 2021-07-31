@@ -1,6 +1,6 @@
 package sgcp.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Vigencia {
 	private Integer id;
 	private ContratoKey contrato;
 	@Column(name="data_inicio")
-	private Date dataInicio;
+	private LocalDate dataInicio;
 	@Column(name="data_fim")
-	private Date dataFim;
+	private LocalDate dataFim;
 }
