@@ -27,6 +27,7 @@ public class DadosPessoaisDTO {
 	@Pattern(regexp=".+@.+\\..+", message = "Email deve ser válido")
 	private String email;	
 	@NotNull
+	@Pattern(regexp="\\d{2}+\\/\\d{2}+\\/\\d{4}$", message = "Informe a data no formato dd/mm/aaaa")
 	private String dataNascimento;		
 	@Valid
 	private List<Telefone> telefones;
