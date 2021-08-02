@@ -17,5 +17,6 @@ public interface ContratoMapper {
 	@Mapping(source = "dto.dataAssinatura", target = "dataAssinatura", dateFormat = "dd/MM/yyyy")
 	@Mapping(source = "dto.numero", target = "id.numero")
 	@Mapping(source = "dto.ano", target = "id.ano")
+	@Mapping(source = "dto.cpfPreposto", target = "preposto.cpf")
 	Contrato toModel(ContratoDTO dto);
 }
