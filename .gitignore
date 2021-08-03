@@ -1,5 +1,7 @@
 bin/
 
+sgcp_h2_bd.trace.db
+
 .attach_pid33239
 .attach_pid41367
 

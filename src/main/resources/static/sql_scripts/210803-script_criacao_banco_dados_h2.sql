@@ -27,7 +27,7 @@ drop table if exists vigencia;
 /*==============================================================*/
 create table contrato
 (
-   numero_contrato      identity not null,
+   numero_contrato      int not null,
    ano_contrato         int not null,
    objeto               text not null,
    data_assinatura      date not null,
@@ -42,7 +42,7 @@ create table contrato
 /*==============================================================*/
 create table vigencia
 (
-   id_vigencia          IDENTITY not null,
+   id_vigencia          identity not null,
    numero_contrato      int not null,
    ano_contrato         int not null,
    data_inicio          date not null,
@@ -68,7 +68,7 @@ create table dados_pessoais
 /*==============================================================*/
 create table telefone
 (
-   id_telefone          IDENTITY not null,
+   id_telefone          identity not null,
    cpf                  varchar(11) not null,
    ddi                  varchar(3),
    ddd                  varchar(3),
@@ -108,7 +108,7 @@ create table fiscalizacao
 /*==============================================================*/
 create table pagamento
 (
-   id_pagamento         IDENTITY not null,
+   id_pagamento         identity not null,
    matricula            varchar(6) not null,
    numero_contrato      int not null,
    ano_contrato         int not null,
