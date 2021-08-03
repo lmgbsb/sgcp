@@ -42,6 +42,9 @@ public class ContratoService {
 	*/
 	public Contrato incluirContrato(ContratoDTO contratoDTO) {
 		Contrato contrato = mapper.toModel(contratoDTO);
+		if(contratoDTO.getCpfPreposto() == null) {
+			contrato.setPreposto(null);
+		}
 		return contratoRepository.save(contrato);
 	}	
 	public String alterarContrato(Contrato contrato, Locale locale) {

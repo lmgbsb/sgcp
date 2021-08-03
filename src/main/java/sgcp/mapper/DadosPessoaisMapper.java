@@ -2,12 +2,13 @@ package sgcp.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.NullValueMappingStrategy;
 import org.mapstruct.factory.Mappers;
 
 import sgcp.dto.DadosPessoaisDTO;
 import sgcp.model.DadosPessoais;
 
-@Mapper
+@Mapper(nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
 public interface DadosPessoaisMapper {
 
 	

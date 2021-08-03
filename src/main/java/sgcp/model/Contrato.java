@@ -41,4 +41,5 @@ public class Contrato {
         		@JoinColumn(name = "ano_contrato", referencedColumnName = "ano_contrato")},
     	inverseJoinColumns = { @JoinColumn(name = "cpf", referencedColumnName = "cpf") })
 	private DadosPessoais preposto;
+	
 }
