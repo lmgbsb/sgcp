@@ -21,8 +21,9 @@ public class TelefoneService {
 	public TelefoneService(TelefoneRepository telefoneRepository) {
 		this.telefoneRepository = telefoneRepository;
 	}
-	public Telefone incluirTelefone(@RequestBody Telefone phone){	
-		return telefoneRepository.save(phone);
+	public Telefone incluirTelefone(TelefoneDTO dto){	
+		Telefone telefone = mapper.toModel(dto);
+		return telefoneRepository.save(telefone);
 	}
 	public List<Telefone> listarTelefones() {	
 		return telefoneRepository.findAll();
