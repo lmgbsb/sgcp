@@ -82,3 +82,6 @@ Os microserviços desse projeto utilizarão o formato JSON como formato de seria
 - Os microserviços respeitarão a semântica do protocolo utilizado pela API. As quatro operações básicas disponibilizadas pelo protocolo HTTP são GET, POST, PUT e DELETE, o que implica que recursos devem ser criados através da operação POST, alterados por PUT, recuperados por GET e removidos por DELETE. Esse nível de maturidade exige também o uso correto de status code, para descrever corretamente as respostas das requisições realizadas.
 - Os microserviços implementarão o conceito de [hipermídia como plataforma de estado da aplicação](https://en.wikipedia.org/wiki/HATEOAS), que adiciona controles hipermídia às representações, trazendo ainda mais flexibilidade na medida em que possibilita mudanças de ambiente de execução em operações de cliente e na API.
 
+**Esta etapa do projeto ainda está em desenvolvimento**
+
+![](https://media.giphy.com/media/EIiJp9cQ3GeEU/giphy.gif)
